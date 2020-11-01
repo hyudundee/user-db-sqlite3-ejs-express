@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Users Database</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-4">Users Databse</h1>
+    <div>
+      <h4>Create a new user</h4>
+      <form action="/", method="POST">
+        <%- include('_form_new_user') %>
+      </form>
+      <h4>Update a new user</h4>
+      <form action="/update", method="POST">
+        <%- include('_form_update_user') %>
+      </form>
+      <h4>Get a specific user</h4>
+      <form action="/specific", method="GET">
+        <%- include('_form_get_specific_user') %>
+      </form>
+      <h4>Delete an user</h4>
+      <form action="/delete", method="POST">
+        <%- include('_form_delete_user') %>
+      </form>
+    </div>
+      <h2 class="mt-4">Users Data</h2>
+      <% users.forEach(user => { %>
+        <div class="card mt-4">
+          <div class="card-body">
+            <h4 class="card-title">name: <%= user.name %></h4>
+            <h5 class = "card-text mb-2">user id: <%= user.id %><h5>
+            <div class = "card-text mb-2">email: <%= user.email %></div>
+            <div class = "card-text mb-2">password: <%= user.password %></div>
+          </div>
+        </div>
+      <% })%></h2>
+  </div>
+</body>
+</html>
