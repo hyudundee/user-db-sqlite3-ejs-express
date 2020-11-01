@@ -2,13 +2,13 @@
 
 ## First time install
 
-run
+- run
 
 _npm install_
 
 _npm run server_
 
-access the app via 'http://localhost:2000/users'
+- access the app via 'http://localhost:2000/users'
 
 enjoy!
 
